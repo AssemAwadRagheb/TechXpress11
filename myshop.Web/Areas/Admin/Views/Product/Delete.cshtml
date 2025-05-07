@@ -1,0 +1,29 @@
+﻿@model Product
+
+@{
+    ViewBag.PageTitle = "Product Management";
+    ViewBag.CardTitle = "Delete Product";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<div class="card shadow">
+    <div class="card-header bg-danger text-white">
+        <h3 class="card-title">Are you sure you want to delete this?</h3>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <!-- تفاصيل المنتج هنا -->
+        </dl>
+
+        <!-- التعديل هنا: استخدم asp-action="Delete" بدلاً من DeletePOST -->
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">
+                <i class="fas fa-trash-alt"></i> Delete
+            </button>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to List
+            </a>
+        </form>
+    </div>
+</div>
